@@ -5,7 +5,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 addDecorator(withKnobs);
 setAddon(JSXAddon);
 
-const req = require.context("../src/lib/components", true, /\.story\.tsx$/);
+const req = require.context("../src", true, /\.story\.tsx$/);
 
 function loadStories() {
   req.keys().forEach(req);
