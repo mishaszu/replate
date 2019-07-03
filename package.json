@@ -1,0 +1,116 @@
+{
+  "name": "replate",
+  "version": "0.0.1",
+  "description": "react typescript boilerplate",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.babel.js",
+    "profile:dev": "webpack --config ./webpack/webpack.dev.babel.js --profile --json > stats.json",
+    "profile:prod": "webpack --config ./webpack/webpack.prod.babel.js --profile --json > stats.json",
+    "analyze:dev": "npm run profile:dev && webpack-bundle-analyzer stats.json",
+    "analyze:prod": "npm run profile:prod && webpack-bundle-analyzer stats.json",
+    "start:prod": "webpack-dev-server --config ./webpack/webpack.prod.babel.js",
+    "build:prod": "webpack --config ./webpack/webpack.prod.babel.js",
+    "build:dev": "webpack --config ./webpack/webpack.dev.babel.js",
+    "test": "./node_modules/.bin/jest",
+    "test:coverage": "./node_modules/.bin/jest --coverage",
+    "clean": "rm -rf ./dist && rm -rf ./coverage",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "lint": "eslint '**/*s.ts' '**/*.tsx' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mishaszu/replate.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "webpack"
+  ],
+  "author": "mishaszu@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mishaszu/replate/issues"
+  },
+  "homepage": "https://github.com/mishaszu/replate#readme",
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testMatch": [
+      "**/__tests__/*.test.(ts|tsx|js)"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(scss)$": "identity-obj-proxy"
+    },
+    "coverageDirectory": "<rootDir>/coverage/"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/polyfill": "7.4.4",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "@babel/register": "7.4.4",
+    "@types/enzyme": "3.9.4",
+    "@testing-library/react-hooks": "1.0.4",
+    "@types/enzyme-adapter-react-16": "1.0.5",
+    "@types/jest": "24.0.15",
+    "@types/styled-components": "4.1.8",
+    "@types/webpack-env": "1.13.9",
+    "@typescript-eslint/eslint-plugin": "1.9.0",
+    "@typescript-eslint/parser": "1.9.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-styled-components": "1.10.0",
+    "clean-webpack-plugin": "3.0.0",
+    "compression-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "5.0.3",
+    "css-loader": "2.1.1",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react-hooks": "1.6.0",
+    "file-loader": "3.0.1",
+    "fork-ts-checker-webpack-plugin": "1.3.5",
+    "html-webpack-plugin": "3.2.0",
+    "jest": "24.8.0",
+    "mini-css-extract-plugin": "0.7.0",
+    "react-hot-loader": "4.9.0",
+    "speed-measure-webpack-plugin": "^1.3.1",
+    "style-loader": "0.23.1",
+    "ts-jest": "24.0.2",
+    "typescript": "3.4.3",
+    "url-loader": "2.0.0",
+    "webpack": "4.33.0",
+    "webpack-bundle-analyzer": "3.3.2",
+    "webpack-cli": "3.3.2",
+    "webpack-dev-server": "3.6.0",
+    "webpack-merge": "4.2.1",
+    "worker-loader": "2.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.4.5",
+    "@types/prop-types": "15.7.1",
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "4.3.4",
+    "axios": "0.18.0",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-router-dom": "5.0.1",
+    "styled-components": "4.2.0",
+    "styled-icons": "7.15.1",
+  }
+}
